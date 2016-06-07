@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".view.activities.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/act_main_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/act_main_take_photo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_take_photo"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/take_photo"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
+    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+        android:id="@+id/act_main_image_view_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/act_main_linear"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop" />
+
+    <it.sephiroth.android.library.imagezoom.ImageViewTouch
+        android:id="@+id/act_main_image_draw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/act_main_image_view_result"
+        android:layout_alignEnd="@id/act_main_image_view_result"
+        android:layout_alignStart="@id/act_main_image_view_result"
+        android:layout_alignTop="@id/act_main_image_view_result"
+        android:layout_below="@+id/act_main_linear"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_floating_action_menu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        fab:menu_backgroundColor="#ccffffff"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_position="left"
+        fab:menu_labels_singleLine="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_watch_photos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_list"
+            fab:fab_label="@string/watch_list"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_save_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_save"
+            fab:fab_label="@string/save_photo"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_draw_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_draw"
+            fab:fab_label="@string/draw_photo"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_edith_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit_photo"
+            fab:fab_label="@string/edit_photo"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</RelativeLayout>
